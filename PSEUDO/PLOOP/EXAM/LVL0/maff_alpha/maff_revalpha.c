@@ -1,46 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   search_and_replace.c                               :+:      :+:    :+:   */
+/*   maff_revalpha.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkpg-md- <dkpg-md-@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 11:28:22 by dkpg-md-          #+#    #+#             */
-/*   Updated: 2025/03/07 11:38:24 by dkpg-md-         ###   ########.fr       */
+/*   Created: 2025/03/13 14:17:10 by dkpg-md-          #+#    #+#             */
+/*   Updated: 2025/03/13 14:24:38 by dkpg-md-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_revalpha(void)
 {
-	write(1, &c, 1);
-}
+	int 	i;
+	char	alpha;
+	char	upper;
 
-int	main(int argc, char *argv[])
-{
-	int	i;
-
+	alpha = 'z';
 	i = 0;
-	if (argc != 4)
+	while (i < 26)
 	{
-		ft_putchar('\n');
-		return (0);
-	}
-	if (argv[2][1] != '\0' || argv[3][1] != '\0')
-	{
-		ft_putchar('\n');
-		return (0);
-	}
-	while(argv[1][i] != '\0')
-	{
-		if(argv[1][i] == argv[2][0])
+		if (i % 2 != 0)
 		{
-			argv[1][i] = argv[3][0];
+			upper = alpha - 32;
+			write(1, &upper, 1);
 		}
-		write(1, &argv[1][i], 1);
+		if (i % 2 == 0)
+		{
+			write (1, &alpha, 1);
+		}
+		alpha--;
 		i++;
 	}
-	ft_putchar('\n');
+}
+
+int	main(void)
+{
+	ft_revalpha();
 	return (0);
 }

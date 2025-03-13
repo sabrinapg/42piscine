@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_range.c                                         :+:      :+:    :+:   */
+/*   swap_bits.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dkpg-md- <dkpg-md-@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: fwuensch <fwuensch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 01:36:43 by dkpg-md-          #+#    #+#             */
-/*   Updated: 2025/03/11 01:49:10 by dkpg-md-         ###   ########.fr       */
+/*   Created: 2017/07/20 21:01:37 by fwuensch          #+#    #+#             */
+/*   Updated: 2025/03/13 14:00:55 by dkpg-md-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-
-
-int	*ft_range
-
-
-
-
-
-
-
-
-
-
-
-
-
-#include <stdio.h>
-#include <string.h>
 #include <unistd.h>
 
-int	main(void)
+unsigned char	swap_bits(unsigned char octet)
 {
-	
+	return ((octet >> 4) | (octet << 4));
+}
+
+int		main(void)
+{
+	char c;
+
+	c = 't';
+	write(1, &c, 1);
+	c = swap_bits(c);
+	write(1, &c, 1);
 	return (0);
 }

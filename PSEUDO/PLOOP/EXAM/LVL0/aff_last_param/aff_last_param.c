@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   aff_last_param.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkpg-md- <dkpg-md-@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/11 15:50:37 by dkpg-md-          #+#    #+#             */
-/*   Updated: 2025/03/11 15:51:46 by dkpg-md-         ###   ########.fr       */
+/*   Created: 2025/03/13 15:12:09 by dkpg-md-          #+#    #+#             */
+/*   Updated: 2025/03/13 15:15:42 by dkpg-md-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c);
-void	ft_swap(int *a, int *b);
-void	ft_putstr(char *str);
-int	ft_strlen(char *str);
-int	ft_strcmp(char *s1, char *s2);
+int	main(int argc, char *argv[])
+{
+	int	i;
+	int	m;
+
+	i = 0;
+	m = argc - 1;
+	if (argc > 1)
+	{
+		while (*argv[m])
+			write (1, argv[m]++, 1);
+	}
+	write (1, "\n", 1);
+	return (0);
+}

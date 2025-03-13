@@ -63,7 +63,7 @@ char	*ft_malloc(int size)
 	char	*ptr;
 
 	null = 0;
-	ptr = malloc(size);
+	ptr = malloc(size * sizeof(char));
 	if (!ptr)
 		return (null);
 	return (ptr);
@@ -77,6 +77,13 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 	null = 0;
 	str = ft_malloc(joinlen(size, strs, sep));
+	if (size == 0)
+	{
+		str = ft_malloc(1);
+		if (str)
+			str[0] = '\0';
+		return (null);
+	}
 	if (!str)
 		return (null);
 	*str = '\0';
